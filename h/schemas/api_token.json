@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf": [
+    {
+      "title": "JWT bearer exchange",
+      "type": "object",
+      "properties": {
+        "grant_type": {
+          "enum": ["urn:ietf:params:oauth:grant-type:jwt-bearer"]
+        }
+      },
+      "required": ["grant_type", "assertion"]
+    },
+    {
+      "title": "Refresh token",
+      "type": "object",
+      "properties": {
+        "grant_type": {
+          "enum": ["refresh_token"]
+        }
+      },
+      "required": ["grant_type", "refresh_token"]
+    }
+  ],
+  "properties": {
+    "grant_type": {
+      "type": "string",
+      "enum": ["urn:ietf:params:oauth:grant-type:jwt-bearer", "refresh_token"]
+    },
+    "assertion": { "type": "string" },
+    "refresh_token": { "type": "string" }
+  }
+}
