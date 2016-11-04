@@ -13,11 +13,13 @@ describe('SearchBarController', function () {
     var dropdown;
     var ctrl;
     var TEMPLATE = `
-      <form data-ref="searchBarForm">
-        <div class="search-bar__lozenges" data-ref="searchBarLozenges">
-        </div>
-        <input data-ref="searchBarInput" class="search-bar__input" name="q" />
-      </form>
+      <div>
+        <form data-ref="searchBarForm">
+          <div class="search-bar__lozenges" data-ref="searchBarLozenges">
+          </div>
+          <input data-ref="searchBarInput" class="search-bar__input" name="q" />
+        </form>
+      </div>
     `;
 
     beforeEach(function () {
@@ -101,10 +103,12 @@ describe('SearchBarController', function () {
     function component(value) {
       value = value || '';
       var template = `
-        <form>
-          <div class="search-bar__lozenges" data-ref="searchBarLozenges"></div>
-          <input data-ref="searchBarInput" class="search-bar__input" name="q" value="${value}">
-        </form>
+        <div>
+          <form data-ref="searchBarForm">
+            <div class="search-bar__lozenges" data-ref="searchBarLozenges"></div>
+            <input data-ref="searchBarInput" class="search-bar__input" name="q" value="${value}">
+          </form>
+        </div>
       `.trim();
 
       ctrl = util.setupComponent(document, template, SearchBarController);
