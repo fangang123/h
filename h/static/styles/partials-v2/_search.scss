@@ -206,10 +206,15 @@
 @media screen and (max-width: $tablet-width + 225px) {
   .search-result-container {
     flex-direction: column;
+    margin-top: 25px;
   }
 
   .search-result-nav {
     display: flex;
+  }
+
+  .hide-on-small-screens {
+    display: none;
   }
 }
 
