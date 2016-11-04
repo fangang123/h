@@ -83,6 +83,21 @@
   {{ panel('navbar') }}
 
   <div class="search-result-container">
+    {% if group %}
+    <nav class="search-result-nav">
+      {% if "moreInfo" not in request.params %}
+        <h1 class="search-result-nav__title">{{ group.name }}</h1>
+        <a class="search-result-nav__button" href="?moreInfo">
+          {% trans %}More info{% endtrans %}
+        </a>
+      {% else %}
+        <a class="search-result-nav__button" href="?">
+          {% trans %}Back{% endtrans %}
+        </a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
     <ol class="search-result-list">
       {% for timeframe in timeframes %}
         <li class="search-result__timeframe">

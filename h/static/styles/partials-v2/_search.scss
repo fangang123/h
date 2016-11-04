@@ -3,6 +3,31 @@
 // Styles for the search page which displays the results
 // of activity queries.
 
+.search-result-nav {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+  margin-right: 10px;
+}
+
+.search-result-nav__title {
+  color: $brand;
+  margin: 0;
+}
+
+.search-result-nav__button {
+  background-color: $grey-2;
+  color: inherit;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+}
+
 .search-result-container {
   display: flex;
   font-size: $normal-font-size;
@@ -181,6 +206,10 @@
 @media screen and (max-width: $tablet-width + 225px) {
   .search-result-container {
     flex-direction: column;
+  }
+
+  .search-result-nav {
+    display: flex;
   }
 }
 
